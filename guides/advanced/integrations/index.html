@@ -1,0 +1,1457 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for AI Lead Follow-up System">
+      
+      
+      
+        <link rel="canonical" href="https://docs.mycompany.com/guides/advanced/integrations/">
+      
+      
+        <link rel="prev" href="../automation/">
+      
+      
+        <link rel="next" href="../../../api/overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Integrations - FollowMyLead Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integrations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<header class="company-header">
+  <div class="header-container">
+    <div class="header-brand">
+      <span class="company-name">FollowMyLead</span>
+    </div>
+    <nav class="header-nav">
+      <a href="https://mycompany.com" class="header-link">Website</a>
+      <a href="https://dashboard.mycompany.com" class="header-link">Dashboard</a>
+      <a href="mailto:support@mycompany.com" class="header-link">Support</a>
+    </nav>
+  </div>
+</header>
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="FollowMyLead Docs" class="md-header__button md-logo" aria-label="FollowMyLead Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FollowMyLead Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integrations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="FollowMyLead Docs" class="md-nav__button md-logo" aria-label="FollowMyLead Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FollowMyLead Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#popular-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Popular Integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Popular Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crm-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRM Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CRM Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salesforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salesforce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hubspot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HubSpot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipedrive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipedrive
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Platforms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Email Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mailchimp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mailchimp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendgrid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sendgrid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Channels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication Channels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#twilio-sms-voice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Twilio (SMS &amp; Voice)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whatsapp-business" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WhatsApp Business
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics &amp; Reporting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytics &amp; Reporting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Analytics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixpanel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixpanel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-custom-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Building Custom Integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building Custom Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webhook-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-api-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-signature-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook Signature Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flow-1-salesforce-followmylead-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow 1: Salesforce → FollowMyLead → Email
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-2-web-form-hubspot-whatsapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow 2: Web Form → HubSpot → WhatsApp
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bearer-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bearer Token
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-key-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth 2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-active-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View Active Integrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disconnect-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disconnect Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Endpoints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h1>
+<p>Connect FollowMyLead with your favorite tools and platforms. Our extensive integration library enables seamless data flow across your entire tech stack.</p>
+<h2 id="popular-integrations">Popular Integrations<a class="headerlink" href="#popular-integrations" title="Permanent link">&para;</a></h2>
+<h3 id="crm-systems">CRM Systems<a class="headerlink" href="#crm-systems" title="Permanent link">&para;</a></h3>
+<h4 id="salesforce">Salesforce<a class="headerlink" href="#salesforce" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Salesforce</span>
+<span class="nt">Base URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://salesforce.com</span>
+<span class="nt">Authentication</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAuth 2.0</span>
+<span class="nt">Sync Direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bidirectional</span>
+
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Auto-create leads in Salesforce</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Sync custom fields</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Add to campaigns automatically</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Track email opens in Salesforce</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Log all activities</span>
+</code></pre></div>
+<p><strong>Setup:</strong>
+1. Go to <strong>Integrations</strong> → <strong>Salesforce</strong>
+2. Click <strong>Connect</strong>
+3. Authorize with Salesforce credentials
+4. Map custom fields
+5. Choose sync frequency</p>
+<h4 id="hubspot">HubSpot<a class="headerlink" href="#hubspot" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HubSpot</span>
+<span class="nt">Base URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://api.mycompany.com/v1/hubspot</span>
+<span class="nt">Authentication</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API Key</span>
+<span class="nt">Sync Direction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bidirectional</span>
+
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Sync contacts automatically</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Create deals from workflows</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Track email engagement</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Update contact properties</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Trigger workflows</span>
+</code></pre></div>
+<h4 id="pipedrive">Pipedrive<a class="headerlink" href="#pipedrive" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pipedrive</span>
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Add leads as persons</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Create deals automatically</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Sync contact information</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Track communication history</span>
+</code></pre></div>
+<h3 id="email-platforms">Email Platforms<a class="headerlink" href="#email-platforms" title="Permanent link">&para;</a></h3>
+<h4 id="mailchimp">Mailchimp<a class="headerlink" href="#mailchimp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mailchimp</span>
+<span class="nt">Base URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://api.mailchimp.com</span>
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Add contacts to lists</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Create automations</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Track email performance</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Segment audiences</span>
+</code></pre></div>
+<h4 id="sendgrid">Sendgrid<a class="headerlink" href="#sendgrid" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SendGrid</span>
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Send transactional emails</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Track opens and clicks</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Manage sender identities</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Monitor deliverability</span>
+</code></pre></div>
+<h3 id="communication-channels">Communication Channels<a class="headerlink" href="#communication-channels" title="Permanent link">&para;</a></h3>
+<h4 id="twilio-sms-voice">Twilio (SMS &amp; Voice)<a class="headerlink" href="#twilio-sms-voice" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Twilio</span>
+<span class="nt">Base URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://api.twilio.com</span>
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Send SMS messages</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Make outbound calls</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Receive inbound messages</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Record conversations</span>
+</code></pre></div>
+<p><strong>Configuration:</strong>
+<div class="highlight"><pre><span></span><code>TWILIO_ACCOUNT_SID=your_account_sid
+TWILIO_AUTH_TOKEN=your_auth_token
+TWILIO_PHONE_NUMBER=+1234567890
+</code></pre></div></p>
+<h4 id="whatsapp-business">WhatsApp Business<a class="headerlink" href="#whatsapp-business" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WhatsApp Business API</span>
+<span class="nt">Base URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://graph.instagram.com/v18.0</span>
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Send template messages</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Receive incoming messages</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Send media files</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Track message status</span>
+</code></pre></div>
+<h3 id="analytics-reporting">Analytics &amp; Reporting<a class="headerlink" href="#analytics-reporting" title="Permanent link">&para;</a></h3>
+<h4 id="google-analytics">Google Analytics<a class="headerlink" href="#google-analytics" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Google Analytics</span>
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Track website visitors</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Monitor conversion funnels</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Export custom reports</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Segment audiences</span>
+</code></pre></div>
+<h4 id="mixpanel">Mixpanel<a class="headerlink" href="#mixpanel" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">Integration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mixpanel</span>
+<span class="nt">Features</span><span class="p">:</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Track user events</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Analyze user behavior</span>
+<span class="l l-Scalar l-Scalar-Plain">├─ Create cohorts</span>
+<span class="l l-Scalar l-Scalar-Plain">└─ Export event data</span>
+</code></pre></div>
+<h2 id="building-custom-integrations">Building Custom Integrations<a class="headerlink" href="#building-custom-integrations" title="Permanent link">&para;</a></h2>
+<h3 id="webhook-support">Webhook Support<a class="headerlink" href="#webhook-support" title="Permanent link">&para;</a></h3>
+<p>Receive real-time updates via webhooks:</p>
+<div class="highlight"><pre><span></span><code>POST<span class="w"> </span>https://api.mycompany.com/v1/webhooks/events
+
+Headers:
+<span class="w">  </span>Content-Type:<span class="w"> </span>application/json
+<span class="w">  </span>X-Signature:<span class="w"> </span>sha256_signature
+
+Body:
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;event&quot;</span>:<span class="w"> </span><span class="s2">&quot;lead.created&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;timestamp&quot;</span>:<span class="w"> </span><span class="s2">&quot;2024-05-02T10:30:00Z&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;lead_id&quot;</span>:<span class="w"> </span><span class="s2">&quot;abc123&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;email&quot;</span>:<span class="w"> </span><span class="s2">&quot;john@example.com&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;John Doe&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;company&quot;</span>:<span class="w"> </span><span class="s2">&quot;Acme Corp&quot;</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<h3 id="rest-api-integration">REST API Integration<a class="headerlink" href="#rest-api-integration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://api.mycompany.com/v1&quot;</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s2">&quot;your_api_key&quot;</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">API_KEY</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Create a lead</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/leads&quot;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+    <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;john@example.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;company&quot;</span><span class="p">:</span> <span class="s2">&quot;Acme Corp&quot;</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+<h3 id="webhook-signature-verification">Webhook Signature Verification<a class="headerlink" href="#webhook-signature-verification" title="Permanent link">&para;</a></h3>
+<p>Verify webhook authenticity:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hmac</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+
+<span class="n">WEBHOOK_SECRET</span> <span class="o">=</span> <span class="s2">&quot;your_webhook_secret&quot;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">verify_signature</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">signature</span><span class="p">):</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+        <span class="n">WEBHOOK_SECRET</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span>
+        <span class="n">payload</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span>
+        <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">hmac</span><span class="o">.</span><span class="n">compare_digest</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
+
+<span class="c1"># In your webhook handler</span>
+<span class="k">if</span> <span class="n">verify_signature</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">x_signature</span><span class="p">):</span>
+    <span class="c1"># Process webhook</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h2 id="integration-workflows">Integration Workflows<a class="headerlink" href="#integration-workflows" title="Permanent link">&para;</a></h2>
+<h3 id="flow-1-salesforce-followmylead-email">Flow 1: Salesforce → FollowMyLead → Email<a class="headerlink" href="#flow-1-salesforce-followmylead-email" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. Lead created in Salesforce
+   ↓
+2. Webhook triggers FollowMyLead
+   ↓
+3. Lead enrichment workflow
+   ↓
+4. Auto-send welcome email
+   ↓
+5. Track opens in FollowMyLead
+   ↓
+6. Sync engagement back to Salesforce
+</code></pre></div>
+<h3 id="flow-2-web-form-hubspot-whatsapp">Flow 2: Web Form → HubSpot → WhatsApp<a class="headerlink" href="#flow-2-web-form-hubspot-whatsapp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. User submits web form
+   ↓
+2. Form service creates contact in HubSpot
+   ↓
+3. HubSpot triggers FollowMyLead workflow
+   ↓
+4. Send WhatsApp message
+   ↓
+5. Track responses
+   ↓
+6. Update HubSpot contact properties
+</code></pre></div>
+<h2 id="authentication-methods">Authentication Methods<a class="headerlink" href="#authentication-methods" title="Permanent link">&para;</a></h2>
+<h3 id="bearer-token">Bearer Token<a class="headerlink" href="#bearer-token" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.mycompany.com/v1/leads
+</code></pre></div>
+<h3 id="api-key-header">API Key Header<a class="headerlink" href="#api-key-header" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.mycompany.com/v1/leads
+</code></pre></div>
+<h3 id="oauth-20">OAuth 2.0<a class="headerlink" href="#oauth-20" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Redirect to authorization endpoint</span>
+https://api.mycompany.com/v1/oauth/authorize
+?client_id<span class="o">=</span>YOUR_CLIENT_ID
+<span class="p">&amp;</span><span class="nv">redirect_uri</span><span class="o">=</span>https://yourapp.com/callback
+<span class="p">&amp;</span><span class="nv">scope</span><span class="o">=</span>read:leads,write:leads
+
+<span class="c1"># 2. Exchange code for token</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://api.mycompany.com/v1/oauth/token<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="nv">grant_type</span><span class="o">=</span>authorization_code<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="nv">code</span><span class="o">=</span>AUTHORIZATION_CODE<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="nv">client_id</span><span class="o">=</span>YOUR_CLIENT_ID<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="nv">client_secret</span><span class="o">=</span>YOUR_CLIENT_SECRET
+</code></pre></div>
+<h2 id="integration-management">Integration Management<a class="headerlink" href="#integration-management" title="Permanent link">&para;</a></h2>
+<h3 id="view-active-integrations">View Active Integrations<a class="headerlink" href="#view-active-integrations" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.mycompany.com/v1/integrations
+</code></pre></div>
+<h3 id="disconnect-integration">Disconnect Integration<a class="headerlink" href="#disconnect-integration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.mycompany.com/v1/integrations/salesforce
+</code></pre></div>
+<h3 id="test-integration">Test Integration<a class="headerlink" href="#test-integration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.mycompany.com/v1/integrations/salesforce/test
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Integration Troubleshooting</p>
+<ul>
+<li><strong>Connection failed</strong> — Check API credentials and network access</li>
+<li><strong>Sync not working</strong> — Verify webhook URL and permissions</li>
+<li><strong>Data mismatch</strong> — Check field mapping and data types</li>
+<li><strong>Rate limiting</strong> — Implement exponential backoff</li>
+</ul>
+</div>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Integration Documentation</strong> — <a href="https://api.mycompany.com/docs">https://api.mycompany.com/docs</a></li>
+<li><strong>Developer Support</strong> — <a href="mailto:support@mycompany.com">support@mycompany.com</a></li>
+<li><strong>Status Page</strong> — <a href="https://mycompany.com/status">https://mycompany.com/status</a></li>
+</ul>
+<hr />
+<p><strong>Next:</strong> <a href="../../../api/overview/">API Reference</a> | <a href="../../../api/auth/">Authentication</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/mycompany" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/mycompany" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+<footer class="company-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p class="footer-copyright">
+        © 2024 FollowMyLead — Documentation for AI Lead Follow-up System
+      </p>
+      <p class="footer-tagline">Built with ❤️ by FollowMyLead</p>
+      <div class="footer-links">
+        <a href="https://mycompany.com">Website</a>
+        <span> • </span>
+        <a href="https://dashboard.mycompany.com">Dashboard</a>
+        <span> • </span>
+        <a href="mailto:support@mycompany.com">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
