@@ -1,0 +1,65 @@
+site_name: FollowMyLead Docs
+site_description: Documentation for AI Lead Follow-up System
+site_url: https://docs.mycompany.com/
+
+theme:
+  name: material
+  custom_dir: overrides
+  # logo: assets/logo.png  # Uncomment when you add your logo
+  favicon: assets/favicon.png
+  features:
+    - navigation.top
+    - navigation.indexes
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Introduction: introduction.md
+  - Guides:
+      - Getting Started: guides/getting-started.md
+      - Installation: guides/installation.md
+      - Advanced:
+          - Workflows: guides/advanced/workflows.md
+          - Automation: guides/advanced/automation.md
+          - Integrations: guides/advanced/integrations.md
+  - API Reference:
+      - Overview: api/overview.md
+      - Authentication: api/auth.md
+      - Endpoints: api/endpoints.md
+
+# ⚠️ CUSTOMIZABLE VARIABLES - Change these to match your company
+extra:
+  generator: false
+  company:
+    name: FollowMyLead
+    website: https://mycompany.com
+    dashboard: https://dashboard.mycompany.com
+    support_email: support@mycompany.com
+  api:
+    base_url: https://api.mycompany.com/v1
+    docs_url: https://api.mycompany.com/docs
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mycompany
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/mycompany
+
+plugins:
+  - macros
+
+extra_css:
+  - assets/custom.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+  - codehilite
+  - footnotes
+  - tables
+  - attr_list
+  - md_in_html

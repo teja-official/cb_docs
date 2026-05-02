@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{# Custom Header Override #}
+{% block header %}
+<header class="company-header">
+  <div class="header-container">
+    <div class="header-brand">
+      <span class="company-name">{{ config.extra.company.name }}</span>
+    </div>
+    <nav class="header-nav">
+      <a href="{{ config.extra.company.website }}" class="header-link">Website</a>
+      <a href="{{ config.extra.company.dashboard }}" class="header-link">Dashboard</a>
+      <a href="mailto:{{ config.extra.company.support_email }}" class="header-link">Support</a>
+    </nav>
+  </div>
+</header>
+{{ super() }}
+{% endblock %}
+
+{# Custom Footer Override #}
+{% block footer %}
+{{ super() }}
+<footer class="company-footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p class="footer-copyright">
+        © 2024 {{ config.extra.company.name }} — {{ config.site_description }}
+      </p>
+      <p class="footer-tagline">Built with ❤️ by {{ config.extra.company.name }}</p>
+      <div class="footer-links">
+        <a href="{{ config.extra.company.website }}">Website</a>
+        <span> • </span>
+        <a href="{{ config.extra.company.dashboard }}">Dashboard</a>
+        <span> • </span>
+        <a href="mailto:{{ config.extra.company.support_email }}">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
