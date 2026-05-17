@@ -7,6 +7,7 @@ This is the complete documentation site for **{{ config.extra.company.name }}**.
 - **[Getting Started](guides/getting-started.md)** — Set up your account in minutes
 - **[API Reference](api/overview.md)** — Integrate with our REST API
 - **[Advanced Workflows](guides/advanced/workflows.md)** — Build complex automation
+- **[Others](others/privacy-policy.md)** — Other urls
 
 ## 📚 Documentation Sections
 
@@ -18,6 +19,9 @@ Developer documentation for our REST API.
 
 ### [Advanced Topics](guides/advanced/workflows.md)
 Deep dives into workflows, automation, and integrations.
+
+### [Others](others/privacy-policy.md)
+Policy related links
 
 ## 🔗 Important Links
 
