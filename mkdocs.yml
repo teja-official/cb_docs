@@ -28,6 +28,9 @@ nav:
       - Overview: api/overview.md
       - Authentication: api/auth.md
       - Endpoints: api/endpoints.md
+  - Others:
+    - Privacy policy: others/privacy-policy.md
+    - Data deletion: others/data-deletion.md
 
 # ⚠️ CUSTOMIZABLE VARIABLES - Change these to match your company
 extra:
