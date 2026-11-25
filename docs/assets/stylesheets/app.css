@@ -1,0 +1,627 @@
+/* ═════════════════════════════════════════════════════════════════════════
+   tejod Help Center — theme
+   Mirrors the app's design tokens (frontend/src/app/globals.css):
+   indigo primary, slate text, gray borders, Inter + JetBrains Mono,
+   0.5rem radius, shadcn/ui-style cards, alerts, badges and buttons.
+   ═════════════════════════════════════════════════════════════════════════ */
+
+/* ── Tokens: light ─────────────────────────────────────────────────────── */
+:root {
+  --tj-background: #f8fafc;
+  --tj-foreground: #1e293b;
+  --tj-card: #ffffff;
+  --tj-primary: #6366f1;
+  --tj-primary-hover: #4f46e5;
+  --tj-primary-foreground: #ffffff;
+  --tj-text-brand: #6366f1;
+  --tj-muted: #f3f4f6;
+  --tj-muted-foreground: #6b7280;
+  --tj-accent: #e0e7ff;
+  --tj-accent-foreground: #374151;
+  --tj-secondary: #e5e7eb;
+  --tj-border: #d1d5db;
+  --tj-border-soft: #e5e7eb;
+  --tj-sidebar: #f3f4f6;
+  --tj-destructive: #ef4444;
+  --tj-success: #16a34a;
+  --tj-warning: #f59e0b;
+  --tj-info: #3dafe8;
+  --tj-lp-accent: #00b894;
+  --tj-radius: 0.5rem;
+  --tj-shadow-sm: 0 4px 8px -1px rgb(0 0 0 / 0.10), 0 1px 2px -2px rgb(0 0 0 / 0.10);
+}
+
+/* Material custom palette hooks (primary: custom / accent: custom) */
+:root > * {
+  --md-primary-fg-color: var(--tj-primary);
+  --md-primary-fg-color--light: #818cf8;
+  --md-primary-fg-color--dark: var(--tj-primary-hover);
+  --md-primary-bg-color: var(--tj-primary-foreground);
+  --md-accent-fg-color: var(--tj-primary-hover);
+  --md-accent-fg-color--transparent: rgb(99 102 241 / 0.1);
+
+  --md-default-bg-color: var(--tj-background);
+  --md-default-fg-color: var(--tj-foreground);
+  --md-default-fg-color--light: var(--tj-muted-foreground);
+  --md-default-fg-color--lighter: #9ca3af;
+  --md-default-fg-color--lightest: var(--tj-border-soft);
+
+  --md-typeset-color: var(--tj-foreground);
+  --md-typeset-a-color: var(--tj-text-brand);
+  --md-code-bg-color: var(--tj-muted);
+  --md-code-fg-color: var(--tj-foreground);
+  --md-typeset-table-color: var(--tj-border-soft);
+  --md-footer-bg-color: var(--tj-card);
+  --md-footer-bg-color--dark: var(--tj-sidebar);
+  --md-footer-fg-color: var(--tj-foreground);
+  --md-footer-fg-color--light: var(--tj-muted-foreground);
+  --md-footer-fg-color--lighter: var(--tj-muted-foreground);
+  --md-admonition-bg-color: var(--tj-card);
+  --md-shadow-z1: none;
+  --md-shadow-z2: var(--tj-shadow-sm);
+}
+
+/* ── Tokens: dark (same values as the app's data-theme="dark") ─────────── */
+[data-md-color-scheme="slate"] {
+  --md-hue: 240;
+  --tj-background: #0f0f14;
+  --tj-foreground: #f4f4f8;
+  --tj-card: #1e1e2c;
+  --tj-primary: #7b78ff;
+  --tj-primary-hover: #625df5;
+  --tj-primary-foreground: #0f0f14;
+  --tj-text-brand: #9d9aff;
+  --tj-muted: #2a2a40;
+  --tj-muted-foreground: #a1a1b8;
+  --tj-accent: #26263a;
+  --tj-accent-foreground: #f4f4f8;
+  --tj-secondary: #26263a;
+  --tj-border: #353558;
+  --tj-border-soft: #2e3147;
+  --tj-sidebar: #141419;
+  --tj-destructive: #f87171;
+  --tj-success: #4ade80;
+  --tj-lp-accent: #00d4aa;
+  --tj-shadow-sm: 0 1px 3px rgb(0 0 0 / 0.35);
+}
+
+[data-md-color-scheme="slate"] > * ,
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--tj-primary);
+  --md-primary-bg-color: var(--tj-primary-foreground);
+  --md-accent-fg-color: #9d9aff;
+  --md-default-bg-color: var(--tj-background);
+  --md-default-fg-color: var(--tj-foreground);
+  --md-default-fg-color--light: var(--tj-muted-foreground);
+  --md-default-fg-color--lighter: #6b6b88;
+  --md-default-fg-color--lightest: var(--tj-border-soft);
+  --md-typeset-color: var(--tj-foreground);
+  --md-typeset-a-color: var(--tj-text-brand);
+  --md-code-bg-color: #18181f;
+  --md-code-fg-color: #e4e4ef;
+  --md-typeset-table-color: var(--tj-border-soft);
+  --md-footer-bg-color: var(--tj-sidebar);
+  --md-footer-bg-color--dark: #0f0f14;
+  --md-admonition-bg-color: var(--tj-card);
+}
+
+/* ── Base typography ───────────────────────────────────────────────────── */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--tj-foreground);
+  margin-bottom: 0.6em;
+}
+
+.md-typeset h2 {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--tj-border-soft);
+}
+
+.md-typeset h1 + h2,
+.md-typeset h1 + p + h2 { border-top: 0; }
+
+.md-typeset h3 { font-weight: 600; }
+
+.md-typeset a { text-underline-offset: 2px; }
+.md-typeset a:hover { text-decoration: underline; }
+
+/* Lead paragraph right under the title */
+.md-typeset .tj-lead,
+.md-typeset h1 + p {
+  font-size: 0.9rem;
+  color: var(--tj-muted-foreground);
+}
+
+.md-typeset hr { border-bottom-color: var(--tj-border-soft); }
+
+.md-typeset :not(pre) > code {
+  border: 1px solid var(--tj-border-soft);
+  border-radius: calc(var(--tj-radius) - 4px);
+  padding: 0.05em 0.35em;
+  font-size: 0.82em;
+}
+
+.md-typeset pre > code { border-radius: var(--tj-radius); }
+
+.md-typeset kbd {
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0 1px var(--tj-border), 0 1px 0 1px var(--tj-border);
+  background: var(--tj-card);
+  color: var(--tj-foreground);
+  font-family: var(--md-code-font-family);
+  font-size: 0.75em;
+}
+
+/* ── Header: like the app's top bar (card background, bottom border) ───── */
+.md-header {
+  background-color: color-mix(in srgb, var(--tj-card) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(8px);
+  color: var(--tj-foreground);
+  border-bottom: 1px solid var(--tj-border-soft);
+  box-shadow: none;
+}
+
+.md-header--shadow { box-shadow: none; }
+
+.md-header__title { font-weight: 700; letter-spacing: -0.01em; }
+
+.md-header__button.md-logo { padding: 0.3rem; margin-right: 0; }
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg { height: 1.5rem; width: 1.5rem; }
+
+.md-header .md-icon,
+.md-header__button { color: var(--tj-muted-foreground); }
+.md-header__button:hover { color: var(--tj-foreground); opacity: 1; }
+
+/* "Open tejod" button in the header */
+.tj-header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0.4rem 0 0.6rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: calc(var(--tj-radius) - 2px);
+  background: var(--tj-primary);
+  color: var(--tj-primary-foreground) !important;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+  box-shadow: var(--tj-shadow-sm);
+}
+.tj-header-cta:hover { background: var(--tj-primary-hover); }
+.tj-header-cta svg { width: 0.8rem; height: 0.8rem; }
+
+@media screen and (max-width: 44.9375em) {
+  .tj-header-cta { display: none; }
+}
+
+/* Search box: rounded, muted like the app's search field (Ctrl/⌘ K) */
+.md-search__form {
+  border-radius: calc(var(--tj-radius) - 2px);
+  background-color: var(--tj-muted);
+  border: 1px solid var(--tj-border-soft);
+  box-shadow: none;
+}
+.md-search__form:hover { background-color: var(--tj-accent); }
+.md-search__input { color: var(--tj-foreground); }
+.md-search__input::placeholder { color: var(--tj-muted-foreground); }
+.md-search__icon { color: var(--tj-muted-foreground); }
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  background-color: var(--tj-card);
+  border-radius: var(--tj-radius) var(--tj-radius) 0 0;
+}
+.md-search__output { border-radius: 0 0 var(--tj-radius) var(--tj-radius); }
+.md-search-result mark { color: var(--tj-text-brand); }
+
+/* ── Tabs (top sections) ───────────────────────────────────────────────── */
+.md-tabs {
+  background-color: var(--tj-card);
+  color: var(--tj-muted-foreground);
+  border-bottom: 1px solid var(--tj-border-soft);
+}
+.md-tabs__link {
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 1;
+  color: var(--tj-muted-foreground);
+}
+.md-tabs__link:hover { color: var(--tj-foreground); }
+.md-tabs__item--active .md-tabs__link {
+  color: var(--tj-text-brand);
+  font-weight: 600;
+}
+.md-tabs__item--active {
+  box-shadow: inset 0 -2px 0 var(--tj-primary);
+}
+
+/* ── Sidebar navigation: like the app's shadcn sidebar ─────────────────── */
+.md-nav { font-size: 0.72rem; }
+
+.md-nav__title { color: var(--tj-muted-foreground); font-weight: 600; }
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary .md-nav__item--section > .md-nav__link {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--tj-muted-foreground);
+  }
+
+  .md-sidebar--primary .md-nav__link {
+    border-radius: calc(var(--tj-radius) - 2px);
+    padding: 0.3rem 0.55rem;
+    margin-top: 0.15rem;
+    transition: background-color 0.12s ease, color 0.12s ease;
+  }
+
+  .md-sidebar--primary .md-nav__item:not(.md-nav__item--section) > .md-nav__link:hover {
+    background-color: var(--tj-muted);
+    color: var(--tj-foreground);
+  }
+
+  .md-sidebar--primary .md-nav__link--active,
+  .md-sidebar--primary .md-nav__item--active > .md-nav__link--active {
+    background-color: var(--tj-accent);
+    color: var(--tj-text-brand);
+    font-weight: 600;
+  }
+}
+
+.md-nav__link--active { color: var(--tj-text-brand); }
+
+/* Table of contents (right) */
+.md-sidebar--secondary .md-nav__link { color: var(--tj-muted-foreground); }
+.md-sidebar--secondary .md-nav__link--active,
+.md-sidebar--secondary .md-nav__link:hover { color: var(--tj-text-brand); }
+
+/* ── Admonitions → shadcn Alert style ──────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--tj-border-soft);
+  border-left-width: 3px;
+  border-radius: var(--tj-radius);
+  background-color: var(--tj-card);
+  box-shadow: none;
+  font-size: 0.76rem;
+}
+
+/* Material colours every side per type; keep the app's soft border and
+   only tint the left edge (set per type below). */
+.md-typeset .admonition[class],
+.md-typeset details[class] {
+  border-top-color: var(--tj-border-soft);
+  border-right-color: var(--tj-border-soft);
+  border-bottom-color: var(--tj-border-soft);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: transparent !important;
+  font-weight: 600;
+  border-radius: var(--tj-radius) var(--tj-radius) 0 0;
+}
+
+.md-typeset .admonition.note,
+.md-typeset details.note,
+.md-typeset .admonition.info,
+.md-typeset details.info { border-left-color: var(--tj-primary); }
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before,
+.md-typeset .info > .admonition-title::before,
+.md-typeset .info > summary::before { background-color: var(--tj-primary); }
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip,
+.md-typeset .admonition.success,
+.md-typeset details.success { border-left-color: var(--tj-lp-accent); }
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before,
+.md-typeset .success > .admonition-title::before,
+.md-typeset .success > summary::before { background-color: var(--tj-lp-accent); }
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning { border-left-color: var(--tj-warning); }
+.md-typeset .warning > .admonition-title::before,
+.md-typeset .warning > summary::before { background-color: var(--tj-warning); }
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger { border-left-color: var(--tj-destructive); }
+.md-typeset .danger > .admonition-title::before,
+.md-typeset .danger > summary::before { background-color: var(--tj-destructive); }
+
+.md-typeset .admonition.example,
+.md-typeset details.example,
+.md-typeset .admonition.question,
+.md-typeset details.question { border-left-color: var(--tj-info); }
+.md-typeset .example > .admonition-title::before,
+.md-typeset .example > summary::before,
+.md-typeset .question > .admonition-title::before,
+.md-typeset .question > summary::before { background-color: var(--tj-info); }
+
+.md-typeset details > summary::after { background-color: var(--tj-muted-foreground); }
+.md-typeset .admonition > .admonition-title + *,
+.md-typeset details > summary + * { margin-top: 0.3em; }
+
+/* ── Tables: bordered, rounded, muted header ───────────────────────────── */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--tj-border-soft);
+  border-radius: var(--tj-radius);
+  overflow: hidden;
+  font-size: 0.72rem;
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th {
+  background-color: var(--tj-muted);
+  color: var(--tj-foreground);
+  font-weight: 600;
+}
+.md-typeset table:not([class]) tr:hover { background-color: color-mix(in srgb, var(--tj-muted) 55%, transparent); }
+
+/* ── Buttons (shadcn Button) ───────────────────────────────────────────── */
+.md-typeset .md-button {
+  border-radius: calc(var(--tj-radius) - 2px);
+  border: 1px solid var(--tj-border);
+  color: var(--tj-foreground);
+  background: var(--tj-card);
+  font-weight: 600;
+  font-size: 0.72rem;
+  padding: 0.5em 1.1em;
+  box-shadow: var(--tj-shadow-sm);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.md-typeset .md-button:hover {
+  background: var(--tj-muted);
+  border-color: var(--tj-border);
+  color: var(--tj-foreground);
+  text-decoration: none;
+}
+.md-typeset .md-button--primary {
+  background: var(--tj-primary);
+  border-color: var(--tj-primary);
+  color: var(--tj-primary-foreground);
+}
+.md-typeset .md-button--primary:hover {
+  background: var(--tj-primary-hover);
+  border-color: var(--tj-primary-hover);
+  color: var(--tj-primary-foreground);
+}
+
+/* ── Grid cards (shadcn Card + the landing page's lift on hover) ───────── */
+.md-typeset .grid { grid-gap: 0.8rem; }
+
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--tj-border-soft);
+  border-radius: 0.75rem;
+  background: var(--tj-card);
+  padding: 1rem 1.1rem;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+  .md-typeset .grid.cards > ul > li:hover,
+  .md-typeset .grid > .card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--tj-primary) 45%, var(--tj-border));
+    box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--tj-primary) 35%, transparent);
+  }
+}
+
+.md-typeset .grid.cards > ul > li > hr,
+.md-typeset .grid > .card > hr { margin: 0.6em 0; }
+
+.md-typeset .grid.cards .lg { color: var(--tj-text-brand); }
+
+/* Icon tile, like the app logo / KPI card icons */
+.md-typeset .tj-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: var(--tj-accent);
+  color: var(--tj-text-brand);
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+.md-typeset .tj-icon .twemoji svg { width: 1.1rem; height: 1.1rem; }
+
+/* ── Numbered steps (like the nurture wizard's step badges) ────────────── */
+.md-typeset .steps > ol {
+  list-style: none;
+  counter-reset: tj-step;
+  margin-left: 0;
+  padding-left: 0;
+}
+.md-typeset .steps > ol > li {
+  counter-increment: tj-step;
+  position: relative;
+  margin-left: 0;
+  padding: 0 0 0.9rem 2.4rem;
+  border-left: 1px solid var(--tj-border-soft);
+  margin-left: 0.8rem;
+}
+.md-typeset .steps > ol > li:last-child { border-left-color: transparent; padding-bottom: 0.2rem; }
+.md-typeset .steps > ol > li > p:first-child,
+.md-typeset .steps > ol > li > :first-child { margin-top: 0; }
+.md-typeset .steps > ol > li > p:last-child { margin-bottom: 0; }
+.md-typeset .steps > ol > li { padding-top: 0.15rem; }
+.md-typeset .steps > ol > li::before {
+  content: counter(tj-step);
+  position: absolute;
+  left: -0.8rem;
+  top: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 9999px;
+  background: var(--tj-primary);
+  color: var(--tj-primary-foreground);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px var(--tj-background);
+}
+
+/* ── Badges (shadcn Badge) — <span class="tj-badge">Active</span> ──────── */
+.md-typeset .tj-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  border-radius: 9999px;
+  padding: 0.05em 0.6em;
+  font-size: 0.72em;
+  font-weight: 600;
+  line-height: 1.6;
+  border: 1px solid var(--tj-border-soft);
+  background: var(--tj-muted);
+  color: var(--tj-foreground);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.md-typeset .tj-badge--primary { background: var(--tj-accent); color: var(--tj-text-brand); border-color: transparent; }
+.md-typeset .tj-badge--success { background: color-mix(in srgb, var(--tj-success) 15%, transparent); color: var(--tj-success); border-color: transparent; }
+.md-typeset .tj-badge--warning { background: color-mix(in srgb, var(--tj-warning) 18%, transparent); color: #b45309; border-color: transparent; }
+[data-md-color-scheme="slate"] .md-typeset .tj-badge--warning { color: #fbbf24; }
+.md-typeset .tj-badge--danger { background: color-mix(in srgb, var(--tj-destructive) 15%, transparent); color: var(--tj-destructive); border-color: transparent; }
+
+/* "Where in the app" path chip: Setup › Channels › Add Channel */
+.md-typeset .tj-path {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  border-radius: calc(var(--tj-radius) - 2px);
+  padding: 0.25em 0.65em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: var(--tj-muted);
+  color: var(--tj-muted-foreground);
+  border: 1px solid var(--tj-border-soft);
+}
+.md-typeset .tj-path strong { color: var(--tj-foreground); font-weight: 600; }
+
+/* ── Home page hero (landing-page look: grid, aurora, gradient text) ───── */
+.md-typeset .tj-hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid var(--tj-border-soft);
+  border-radius: 1rem;
+  background: var(--tj-card);
+  padding: 3rem 1.5rem 2.6rem;
+  margin: 0.5rem 0 2rem;
+  isolation: isolate;
+}
+
+.md-typeset .tj-hero::before,
+.md-typeset .tj-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 420px;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.25;
+}
+.md-typeset .tj-hero::before { top: -55%; left: -10%; background: var(--tj-primary); }
+.md-typeset .tj-hero::after { bottom: -60%; right: -10%; background: var(--tj-lp-accent); }
+
+.md-typeset .tj-hero .tj-grid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--tj-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tj-border) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.3;
+  mask-image: radial-gradient(ellipse 85% 65% at 50% 30%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 65% at 50% 30%, #000 30%, transparent 100%);
+}
+
+.md-typeset .tj-hero h1 {
+  font-size: 2.1rem;
+  line-height: 1.15;
+  margin: 0.4rem 0 0.6rem;
+  border: 0;
+}
+.md-typeset .tj-hero p {
+  max-width: 34rem;
+  margin: 0 auto 1.2rem;
+  color: var(--tj-muted-foreground);
+  font-size: 0.9rem;
+}
+.md-typeset .tj-hero .md-button { margin: 0.25rem; }
+
+.md-typeset .tj-gradient-text {
+  background: linear-gradient(120deg, var(--tj-lp-accent) 0%, var(--tj-primary) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.md-typeset .tj-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  border-radius: 9999px;
+  border: 1px solid var(--tj-border-soft);
+  background: var(--tj-background);
+  padding: 0.2em 0.8em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--tj-muted-foreground);
+}
+
+/* ── Footer ────────────────────────────────────────────────────────────── */
+.md-footer { border-top: 1px solid var(--tj-border-soft); }
+.md-footer__link { color: var(--tj-foreground); }
+.md-footer-meta { border-top: 1px solid var(--tj-border-soft); }
+.md-footer-meta,
+.md-footer-meta.md-typeset a { color: var(--tj-muted-foreground); }
+.md-footer-meta.md-typeset a:hover { color: var(--tj-text-brand); }
+.md-social__link svg { max-height: 0.9rem; }
+
+/* ── Misc ──────────────────────────────────────────────────────────────── */
+.md-typeset .tabbed-labels > label { font-weight: 600; }
+.md-typeset .tabbed-set > input:checked + label { color: var(--tj-text-brand); border-color: var(--tj-primary); }
+
+.md-typeset .task-list-indicator::before { background-color: var(--tj-border); }
+.md-typeset [type="checkbox"]:checked + .task-list-indicator::before { background-color: var(--tj-primary); }
+
+.md-top {
+  border-radius: 9999px;
+  background: var(--tj-card);
+  color: var(--tj-foreground);
+  border: 1px solid var(--tj-border-soft);
+  box-shadow: var(--tj-shadow-sm);
+}
+
+/* Scrollbar — same thin style as the app */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--tj-border); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--tj-muted-foreground); }
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .grid.cards > ul > li,
+  .md-typeset .grid > .card { transition: none; }
+}

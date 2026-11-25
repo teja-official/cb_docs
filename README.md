@@ -1,310 +1,111 @@
-# Documentation Setup Guide
+# tejod Help Center
 
-This is a complete, production-ready MkDocs setup for {{ config.extra.company.name }} documentation site.
+User documentation for **tejod**, built with [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) and styled to match the app (same indigo palette, Inter / JetBrains Mono, Lucide icons, light and dark themes).
 
-## 📁 Project Structure
+Published to GitHub Pages at **https://docs.mysite.com/**.
 
-```
-cb_docs/
-├── docs/                          # Documentation source files
-│   ├── index.md                   # Home page
-│   ├── introduction.md            # Introduction
-│   ├── guides/                    # Guides section
-│   │   ├── getting-started.md    # Getting started guide
-│   │   ├── installation.md       # Installation instructions
-│   │   └── advanced/             # Advanced topics
-│   │       ├── workflows.md      # Workflow documentation
-│   │       ├── automation.md     # Automation guide
-│   │       └── integrations.md   # Integrations
-│   ├── api/                       # API documentation
-│   │   ├── overview.md           # API overview
-│   │   ├── auth.md               # Authentication
-│   │   └── endpoints.md          # Endpoint reference
-│   └── assets/                    # Static assets
-│       └── custom.css            # Custom styling
-├── overrides/                     # Theme overrides
-│   └── main.html                 # Custom header/footer
-├── mkdocs.yml                     # MkDocs configuration
-└── README.md                      # This file
-```
-
-## 🚀 Quick Start
-
-### 1. Install MkDocs
+## Quick start
 
 ```bash
-pip install mkdocs mkdocs-material
+make install   # pip install -r requirements.txt (use a virtualenv)
+make serve     # http://127.0.0.1:8000 with live reload
+make build     # strict build into site/ (fails on broken links/anchors)
 ```
 
-### 2. Serve Documentation Locally
+> On WSL, open the preview from Windows as `http://localhost:8000`.
 
-```bash
-mkdocs serve
+## Structure
+
+```
+docs/
+├── index.md                    Home page (hero + cards)
+├── getting-started/            What is tejod, sign-up, plans, setup checklist, navigation
+├── setup/
+│   ├── ai-models.md
+│   ├── channels/               WhatsApp, Telegram, Email, SMS, message templates
+│   ├── human-agents.md
+│   └── lead-sources/           Meta Ads, Google Ads, Google Sheets, spreadsheet upload
+├── nurture-campaigns/          The 4-step wizard, follow-ups, managing campaigns
+├── engage/                     Conversations, handoffs, leads, web chat, dashboards
+├── workspace/                  Team & roles, workspace settings (+ index for the tab)
+├── account/                    Profile, account settings, notifications, billing, referrals, support
+├── third-party/                Provider-side setup: Meta, Telegram, Twilio, email, AI keys, Google Ads
+├── help/                       Troubleshooting, FAQ, glossary, permissions reference
+├── assets/
+│   ├── images/                 logo.svg, favicon.svg (the app's Zap mark)
+│   └── stylesheets/app.css     Theme: app design tokens mapped onto Material
+└── CNAME                       Custom domain for GitHub Pages
+overrides/
+├── main.html                   theme-color meta
+├── partials/header.html        Material header + "Open tejod" button
+└── .icons/lucide/              Lucide SVGs (exported from the frontend's lucide-react)
+scripts/export-lucide.mjs       Re-exports the Lucide icons
+.github/workflows/deploy.yml    Build + deploy to GitHub Pages
 ```
 
-Visit `http://localhost:8000` in your browser.
+The navigation is defined in `mkdocs.yml` → `nav`. Add new pages there.
 
-### 3. Build Static Site
+## Writing pages
 
-```bash
-mkdocs build
-```
+### Variables
 
-This generates the `site/` folder with HTML files.
-
-## ⚙️ Configuration
-
-### Customize Your URLs
-
-Edit `mkdocs.yml` and update the `extra:` section:
-
-```yaml
-extra:
-  company:
-    name: FollowMyLead              # Your company name
-    website: https://mycompany.com
-    dashboard: https://dashboard.mycompany.com
-    support_email: support@mycompany.com
-  api:
-    base_url: https://api.mycompany.com/v1
-    docs_url: https://api.mycompany.com/docs
-```
-
-All URLs in pages will automatically use these variables!
-
-### Add Your Logo
-
-Place your logo in `docs/assets/` and update `mkdocs.yml`:
-
-```yaml
-theme:
-  logo: assets/logo.png
-  favicon: assets/favicon.png
-```
-
-## 📝 Adding New Pages
-
-### Create a Simple Page
-
-1. Create a new `.md` file in the appropriate folder
-2. Add it to the `nav:` section in `mkdocs.yml`
-3. Use variables for URLs:
+Product name, URLs and the support email live in `mkdocs.yml` → `extra.app`. Use them with **double square brackets** (not curly braces — `{{1}}` / `{{name}}` are WhatsApp and Twilio template variables and must stay literal):
 
 ```markdown
-# My Page
-
-Visit our [website]({{ config.extra.company.website }})
-
-API Docs: [{{ config.extra.api.docs_url }}]({{ config.extra.api.docs_url }})
+Sign in at [[ app.login_url ]] and contact [[ app.support_email ]].
 ```
 
-### Create a Nested Section
+Available: `app.name`, `app.url`, `app.login_url`, `app.register_url`, `app.plans_url`, `app.support_email`. Variables don't work inside front matter. For links use `<[[ app.login_url ]]>` or an HTML `<a>`, not `[[[ … ]]]`.
 
-Edit `mkdocs.yml`:
+### Components
 
-```yaml
-nav:
-  - Home: index.md
-  - My Section:
-      - Page 1: section/page1.md
-      - Page 2: section/page2.md
-      - Subsection:
-          - Page 3: section/sub/page3.md
-```
+| Want | Write |
+|---|---|
+| Numbered steps (wizard-style badges) | `<div class="steps" markdown>` + an ordered list + `</div>` |
+| Where in the app | `<span class="tj-path">Setup › **Channels** › **Add Channel**</span>` |
+| Status badge | `<span class="tj-badge tj-badge--success">Active</span>` (`--primary`, `--warning`, `--danger`) |
+| Card grid | `<div class="grid cards" markdown>` + a bullet list |
+| Icon (same as the app) | `:lucide-radio:` — must exist in `overrides/.icons/lucide/` |
+| Callout | `!!! tip "Title"` / `note` / `info` / `warning` / `danger` / `question` |
+| Collapsible Q&A | `??? question "Title"` |
+| Tabs | `=== "OpenAI"` |
+| Keyboard keys | `++ctrl+k++` |
+| Diagram | ` ```mermaid ` (prefer `flowchart TD`) |
 
-## 🎨 Customizing Styling
+### Adding an icon
 
-Edit `docs/assets/custom.css` to customize:
-
-- Header and footer colors
-- Link colors
-- Sidebar width
-- Typography
-- Responsive behavior
-
-### Key CSS Classes
-
-```css
-/* Header */
-.company-header { /* ... */ }
-.header-link { /* ... */ }
-
-/* Footer */
-.company-footer { /* ... */ }
-.footer-links { /* ... */ }
-
-/* Content */
-.md-content h1 { /* ... */ }
-a { /* ... */ }
-```
-
-## 🔧 Customizing Header/Footer
-
-Edit `overrides/main.html` to change:
-
-- Header branding
-- Navigation links
-- Footer content
-- Social media links
-
-The file uses Jinja2 templating and has access to all `config.extra` variables!
-
-## 🚢 Deployment
-
-### GitHub Pages
+Icons come from the frontend's `lucide-react` so they match the app. Add the name to the list in `scripts/export-lucide.mjs`, then:
 
 ```bash
-# Install ghp-import
-pip install ghp-import
-
-# Build and deploy
-mkdocs build
-ghp-import -p site
+node scripts/export-lucide.mjs ../frontend/node_modules/lucide-react/dist/esm/icons overrides/.icons/lucide
 ```
 
-### Netlify
+### Keeping docs in sync with the app
 
-1. Connect your GitHub repo
-2. Build command: `mkdocs build`
-3. Publish directory: `site`
+Most setup steps come from the in-app guides. When you change these, update the matching page:
 
-### Docker
+| App source | Docs page |
+|---|---|
+| `frontend/src/components/help/setup-guides.js` | `setup/channels/*`, `setup/ai-models.md`, `setup/lead-sources/*`, `third-party/*` |
+| `frontend/src/components/agents/channel-help.jsx` | `setup/human-agents.md` |
+| `frontend/src/app/(private)/(main)/channels/_components/channelMeta.js` | `setup/channels/*` |
+| `backend/apps/lead_nurture/enums.py` (AI services, strategies, statuses) | `setup/ai-models.md`, `nurture-campaigns/ai-and-channels.md`, `engage/leads.md` |
+| `backend/apps/accounts/permission_catalog.py` | `help/permissions-reference.md` |
+| `backend/apps/accounts/models.py` → `WorkspaceSettings` | `workspace/workspace-settings.md` |
+| `backend/apps/plans/enums.py` → `FeatureKey` | `account/billing.md` |
 
-```dockerfile
-FROM python:3.11
+`setup-guides.js` supports `mode: "link"` with an `href`: point a guide at its page here (e.g. `https://docs.mysite.com/setup/channels/whatsapp/`) to open the docs instead of the in-app dialog.
 
-WORKDIR /docs
+## Deploying to GitHub Pages with your domain
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+1. **Push** this repo to GitHub (`main` branch).
+2. In the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. **DNS** at your domain provider: add a `CNAME` record
+   `docs` → `<your-github-user-or-org>.github.io` (for this repo: `teja-official.github.io`).
+4. In **Settings → Pages**, enter `docs.mysite.com` as the custom domain (it's also in `docs/CNAME`), wait for the DNS check, then tick **Enforce HTTPS**.
 
-COPY . .
+Every push to `main` runs `.github/workflows/deploy.yml`: a strict build, then deploy. Pull requests run the build only.
 
-EXPOSE 8000
-CMD ["mkdocs", "serve", "--dev-addr=0.0.0.0:8000"]
-```
+**Changing the domain:** update `site_url` in `mkdocs.yml` **and** `docs/CNAME`.
 
-```bash
-docker build -t docs .
-docker run -p 8000:8000 docs
-```
-
-## 📦 Required Dependencies
-
-- **Python 3.8+**
-- **mkdocs** — Documentation generator
-- **mkdocs-material** — Material theme for MkDocs
-
-Install with:
-
-```bash
-pip install -r requirements.txt
-```
-
-## 🔐 Best Practices
-
-### Git Workflow
-
-```bash
-# Clone repo
-git clone <repo>
-cd cb_docs
-
-# Create feature branch
-git checkout -b add-new-docs
-
-# Make changes
-# ... edit files ...
-
-# Commit and push
-git add .
-git commit -m "docs: add new feature documentation"
-git push origin add-new-docs
-
-# Create pull request
-```
-
-### Documentation Standards
-
-- ✅ Clear, concise titles
-- ✅ Organize by user journey
-- ✅ Include code examples
-- ✅ Use consistent formatting
-- ✅ Link to related pages
-- ✅ Update when features change
-- ❌ Don't use outdated information
-- ❌ Avoid overly technical language
-
-### SEO Optimization
-
-Add meta tags in `mkdocs.yml`:
-
-```yaml
-extra:
-  generator: false
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com
-```
-
-## 📚 Markdown Features Supported
-
-- **Tables** — Use `|` syntax
-- **Code blocks** — Use triple backticks with language
-- **Admonitions** — `!!! note "Title"`
-- **Tabs** — For alternative content
-- **Footnotes** — Automatic numbering
-- **Task lists** — `- [ ]` and `- [x]`
-- **Emoji** — `:smile:` → 😊
-
-### Example Admonition
-
-```markdown
-!!! warning "Important"
-    This is an important note!
-
-!!! tip "Pro Tip"
-    Use this for helpful hints.
-
-!!! danger "Be Careful"
-    This could break things!
-```
-
-## 🐛 Troubleshooting
-
-### Port 8000 Already in Use
-
-```bash
-mkdocs serve --dev-addr 127.0.0.1:8001
-```
-
-### CSS Not Updating
-
-```bash
-# Clean build
-rm -rf site/
-mkdocs build
-```
-
-### Files Not Appearing
-
-Check `mkdocs.yml` for:
-- Correct file paths
-- Proper indentation (YAML is sensitive!)
-- File exists in docs/ folder
-
-## 📞 Support & Resources
-
-- **MkDocs Docs:** https://www.mkdocs.org/
-- **Material Theme:** https://squidfunk.github.io/mkdocs-material/
-- **Markdown Guide:** https://www.markdownguide.org/
-
-## 📄 License
-
-This documentation setup is provided as-is for use in your organization.
-
----
-
-**Happy documenting! 🚀**
-
-For questions about your documentation, contact: {{ config.extra.company.support_email }}
+Manual deploy (without Actions): `make deploy` (pushes `site/` to the `gh-pages` branch; then set Pages' source to that branch).

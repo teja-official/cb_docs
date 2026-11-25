@@ -1,65 +1,222 @@
-site_name: FollowMyLead Docs
-site_description: Documentation for AI Lead Follow-up System
-site_url: https://docs.mycompany.com/
+# ─────────────────────────────────────────────────────────────────────────────
+# tejod Help Center — MkDocs (Material) configuration
+#
+# Change your domain in TWO places: `site_url` below and `docs/CNAME`.
+# Product name, app URL and support email live under `extra.app` and are used
+# in pages as [[ app.name ]], [[ app.url ]] … (see `plugins → macros`).
+# ─────────────────────────────────────────────────────────────────────────────
+
+site_name: tejod Help Center
+site_description: Guides for setting up and using tejod, the AI lead follow-up platform.
+site_url: https://docs.mysite.com/
+site_author: tejod
+copyright: Copyright &copy; 2026 tejod
 
 theme:
   name: material
   custom_dir: overrides
-  # logo: assets/logo.png  # Uncomment when you add your logo
-  favicon: assets/favicon.png
+  language: en
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    search: lucide/search
+    admonition:
+      note: lucide/info
+      tip: lucide/lightbulb
+      info: lucide/circle-help
+      warning: lucide/triangle-alert
+      danger: lucide/octagon-alert
+      success: lucide/circle-check
+      example: lucide/flask-conical
+      question: lucide/message-circle-question
+  # Light / dark, same as the app's theme toggle
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: lucide/sun-moon
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: lucide/sun
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: lucide/moon
+        name: Use system theme
   features:
-    - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
     - navigation.indexes
-    - toc.integrate
+    - navigation.top
+    - navigation.footer
+    - toc.follow
     - search.suggest
     - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
 
 nav:
   - Home: index.md
-  - Introduction: introduction.md
-  - Guides:
-      - Getting Started: guides/getting-started.md
-      - Installation: guides/installation.md
-      - Advanced:
-          - Workflows: guides/advanced/workflows.md
-          - Automation: guides/advanced/automation.md
-          - Integrations: guides/advanced/integrations.md
-  - API Reference:
-      - Overview: api/overview.md
-      - Authentication: api/auth.md
-      - Endpoints: api/endpoints.md
 
-# ⚠️ CUSTOMIZABLE VARIABLES - Change these to match your company
+  - Getting started:
+      - getting-started/index.md
+      - What is tejod?: getting-started/overview.md
+      - Create your account: getting-started/create-account.md
+      - Choose a plan: getting-started/choose-a-plan.md
+      - Setup checklist: getting-started/setup-checklist.md
+      - Finding your way around: getting-started/navigating-the-app.md
+
+  - Setup:
+      - setup/index.md
+      - AI models: setup/ai-models.md
+      - Channels:
+          - setup/channels/index.md
+          - WhatsApp: setup/channels/whatsapp.md
+          - Telegram: setup/channels/telegram.md
+          - Email: setup/channels/email.md
+          - SMS (Twilio): setup/channels/sms.md
+          - Message templates: setup/channels/message-templates.md
+      - Human agents: setup/human-agents.md
+      - Lead sources:
+          - setup/lead-sources/index.md
+          - Meta Ads: setup/lead-sources/meta-ads.md
+          - Google Ads: setup/lead-sources/google-ads.md
+          - Google Sheets: setup/lead-sources/google-sheets.md
+          - Spreadsheet upload: setup/lead-sources/spreadsheet-upload.md
+          - Managing connections: setup/lead-sources/managing-connections.md
+
+  - Nurture campaigns:
+      - nurture-campaigns/index.md
+      - Create a campaign: nurture-campaigns/create-a-campaign.md
+      - "Step 1: Basic info": nurture-campaigns/basic-info.md
+      - "Step 2: AI & channels": nurture-campaigns/ai-and-channels.md
+      - "Step 3: Knowledge base": nurture-campaigns/knowledge-base.md
+      - "Step 4: Preview & publish": nurture-campaigns/preview-and-publish.md
+      - Follow-ups: nurture-campaigns/follow-ups.md
+      - Manage campaigns: nurture-campaigns/manage-campaigns.md
+
+  - Engage:
+      - engage/index.md
+      - Conversations: engage/conversations.md
+      - Handoffs to agents: engage/handoffs.md
+      - Leads: engage/leads.md
+      - Lead web chat: engage/web-chat.md
+      - Dashboards: engage/dashboards.md
+
+  - Workspace & account:
+      - workspace/index.md
+      - Team & roles: workspace/team-and-roles.md
+      - Workspace settings: workspace/workspace-settings.md
+      - Profile: account/profile.md
+      - Account settings: account/account-settings.md
+      - Notifications: account/notifications.md
+      - Billing & plans: account/billing.md
+      - Referrals: account/referrals.md
+      - Help & support: account/support.md
+
+  - Third-party setup:
+      - third-party/index.md
+      - Meta app for WhatsApp: third-party/meta-whatsapp-cloud-api.md
+      - Telegram BotFather: third-party/telegram-botfather.md
+      - Twilio: third-party/twilio.md
+      - Email providers (SMTP/IMAP): third-party/email-providers.md
+      - AI provider API keys: third-party/ai-provider-keys.md
+      - Meta Business Suite lead access: third-party/meta-lead-access.md
+      - Google Ads lead form webhook: third-party/google-ads-webhook.md
+
+  - Help:
+      - help/index.md
+      - Troubleshooting: help/troubleshooting.md
+      - FAQ: help/faq.md
+      - Glossary: help/glossary.md
+      - Roles & permissions reference: help/permissions-reference.md
+
 extra:
   generator: false
-  company:
-    name: FollowMyLead
-    website: https://mycompany.com
-    dashboard: https://dashboard.mycompany.com
-    support_email: support@mycompany.com
-  api:
-    base_url: https://api.mycompany.com/v1
-    docs_url: https://api.mycompany.com/docs
+  # Used in pages as [[ app.name ]], [[ app.url ]], [[ app.login_url ]] …
+  app:
+    name: tejod
+    url: https://tejod.com
+    login_url: https://tejod.com/login
+    register_url: https://tejod.com/register
+    plans_url: https://tejod.com/plans
+    support_email: info@tejod.com
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/mycompany
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/mycompany
+    - icon: lucide/globe
+      link: https://tejod.com
+      name: tejod website
+    - icon: lucide/mail
+      link: mailto:info@tejod.com
+      name: Email support
 
-plugins:
-  - macros
+# Fail the build (with --strict) on broken links and anchors
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
 
 extra_css:
-  - assets/custom.css
+  - assets/stylesheets/app.css
+
+plugins:
+  - search
+  - macros:
+      # Message templates use {{1}} and {{name}}, so the docs use [[ … ]]
+      # for variables instead of Jinja's default {{ … }}.
+      j2_variable_start_string: "[["
+      j2_variable_end_string: "]]"
+      on_undefined: strict
+      on_error_fail: true
 
 markdown_extensions:
+  - abbr
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
   - toc:
       permalink: true
-  - codehilite
-  - footnotes
-  - tables
-  - attr_list
-  - md_in_html
+      toc_depth: 3
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      # Lucide icons (the app's icon set), exported from the frontend's
+      # lucide-react into overrides/.icons/lucide. Use as :lucide-zap:
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true

@@ -1,59 +1,31 @@
-.PHONY: help install serve build clean deploy docs-clean docs-build docs-serve
+.PHONY: help install serve build clean deploy icons
 
 help:
-	@echo "MkDocs Documentation Commands"
-	@echo "============================="
+	@echo "tejod Help Center"
 	@echo ""
-	@echo "install      - Install dependencies"
-	@echo "serve        - Start local development server"
-	@echo "build        - Build static documentation"
-	@echo "clean        - Clean build artifacts"
-	@echo "deploy       - Build and deploy to GitHub Pages"
-	@echo "docs-serve   - Serve with live reload"
-	@echo "docs-build   - Build production site"
-	@echo "docs-clean   - Remove site/ directory"
-	@echo ""
+	@echo "  make install   Install dependencies (use a virtualenv)"
+	@echo "  make serve     Live-reloading preview on http://127.0.0.1:8000"
+	@echo "  make build     Strict build into site/ (fails on broken links)"
+	@echo "  make clean     Remove site/"
+	@echo "  make deploy    Build and push site/ to the gh-pages branch (manual alternative to GitHub Actions)"
+	@echo "  make icons     Re-export Lucide icons from ../frontend/node_modules"
 
 install:
-	@echo "📦 Installing dependencies..."
-	pip3 install -r requirements.txt
-	@echo "✅ Dependencies installed"
+	pip install -r requirements.txt
 
 serve:
-	@echo "🚀 Starting MkDocs development server..."
-	@echo "📝 Open http://localhost:8000 in your browser"
 	mkdocs serve
 
 build:
-	@echo "🔨 Building documentation..."
-	mkdocs build
-	@echo "✅ Build complete. Output in site/"
+	mkdocs build --strict
 
 clean:
-	@echo "🧹 Cleaning build artifacts..."
 	rm -rf site/
-	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
-	find . -type f -name "*.pyc" -delete
-	@echo "✅ Cleanup complete"
 
-deploy: build
-	@echo "🚀 Deploying to GitHub Pages..."
-	pip3 install ghp-import
-	ghp-import -p site
-	@echo "✅ Deployed!"
+deploy:
+	mkdocs gh-deploy --strict --force
 
-docs-serve:
-	@echo "📖 Starting documentation server..."
-	mkdocs serve --dev-addr 127.0.0.1:8000
-
-docs-build:
-	@echo "🏗️  Building production documentation..."
-	mkdocs build --quiet
-	@echo "✅ Built to site/"
-
-docs-clean:
-	@echo "🗑️  Removing site directory..."
-	rm -rf site/
-	@echo "✅ Removed"
+icons:
+	node scripts/export-lucide.mjs ../frontend/node_modules/lucide-react/dist/esm/icons overrides/.icons/lucide
 
 .DEFAULT_GOAL := help

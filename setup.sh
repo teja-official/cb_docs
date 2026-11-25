@@ -1,49 +1,22 @@
-#!/bin/bash
-
-# MkDocs Documentation Setup Script
-# Quick start for local development and deployment
-
+#!/usr/bin/env bash
+# Create a virtualenv, install dependencies and run a strict build.
 set -e
+#uo pipefail
 
-echo "🚀 MkDocs Documentation Setup"
-echo "=============================="
-echo ""
+cd "$(dirname "$0")"
 
-# Check if Python is installed
-if ! command -v python3 &> /dev/null; then
-    echo "❌ Python 3 is not installed. Please install Python 3.8 or higher."
-    exit 1
-fi
+# if ! command -v python3 >/dev/null 2>&1; then
+#   echo "Python 3.9+ is required." >&2
+#   exit 1
+# fi
 
-echo "✅ Python 3 found: $(python3 --version)"
-echo ""
+# python3 -m venv .venv
+# shellcheck disable=SC1091
+# source .venv/bin/activate
+pip install -q -r requirements.txt
+mkdocs build --strict
 
-# Check if pip is installed
-if ! command -v pip3 &> /dev/null; then
-    echo "❌ pip3 is not installed. Please install pip."
-    exit 1
-fi
-
-echo "✅ pip3 found"
 echo ""
-
-# Install dependencies
-echo "📦 Installing dependencies..."
-pip3 install -r requirements.txt
-echo ""
-
-# Build documentation
-echo "🔨 Building documentation..."
-mkdocs build
-echo ""
-
-echo "✅ Setup complete!"
-echo ""
-echo "📝 Available commands:"
-echo "  mkdocs serve              - Start local server (http://localhost:8000)"
-echo "  mkdocs build              - Build static site to 'site/' folder"
-echo "  mkdocs build --clean      - Clean build (remove old site files)"
-echo ""
-echo "🚀 To start developing locally:"
-echo "  mkdocs serve"
-echo ""
+echo "Done. Next:"
+echo "  source .venv/bin/activate"
+echo "  mkdocs serve    # http://127.0.0.1:8000"
