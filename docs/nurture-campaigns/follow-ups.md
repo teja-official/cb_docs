@@ -35,7 +35,7 @@ flowchart TD
 - Follow-ups go out on the **same channel** as the greeting, in the same thread for email.
 - Email and SMS follow-ups are short and **written by the AI** from the conversation so far. WhatsApp uses your [follow-up template](../setup/channels/message-templates.md#follow-up-template) (or the greeting template, if you chose to reuse it) — with neither, the WhatsApp step is skipped.
 - A follow-up due during quiet hours is moved to the end of the quiet window.
-- Default timing: **24, 48 and 72 hours** after the greeting, then close **48 hours** after the last one. Change it per campaign in [step 2](ai-and-channels.md#follow-up-automatically-when-a-lead-doesnt-reply).
+- Default timing: **24, 48 and 72 hours** after the greeting (only as many as your [plan](../getting-started/choose-a-plan.md) allows — 2 on Starter), then close **48 hours** after the last one. Change it per campaign in [step 2](ai-and-channels.md#follow-up-automatically-when-a-lead-doesnt-reply).
 
 **The sequence stops when** the lead replies on any channel, taps a button, or opens their [web chat link](../engage/web-chat.md) — or when an agent takes over, the lead's status changes to *Not interested, Converted* or *Lost*, the campaign is paused, or the lead source is disabled. When the sequence ends in silence, the lead is marked **Lost** ([Lead statuses](../engage/lead-statuses.md)).
 

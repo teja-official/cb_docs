@@ -20,8 +20,8 @@ About the workspace **you own**. Workspaces you were invited to email their own 
 | **Reporting email** | Error alerts, reports and billing emails go here. Defaults to your login email. |
 | **Error alerts** | Emails when an AI model, channel, lead source or follow-up fails, so you can fix it quickly. Choose which types: *AI Model Error*, *AI Token Limit*, *Channel Error*, *Meta Connection Error*, *Integration Sync Error*, *Follow-up Not Sent*. |
 | **Repeat the same alert** | While an error keeps happening, at most one email per this interval. |
-| **Daily workspace report** | Yesterday's leads, conversations and handoffs. |
-| **Missed activity report** | End-of-day list of messages and handoffs nobody picked up (on plans that include it). |
+| **Daily workspace report** | The last 24 hours: new leads, conversations, conversion rate and AI handling. |
+| **Missed activity report** | End-of-day list of messages and handoffs nobody picked up (on plans that include it). Arrives around 8 pm in your **Timezone** (below); with *This device's timezone*, in your campaigns' timezone. Only sent on days something was missed. |
 | **Leads ready to buy** | When a lead who showed buying interest ends a conversation. The in-app alert is always shown. |
 | **Subscription reminders** | A reminder before your plan ends. |
 | **Referral rewards** | When someone you referred earns you a reward. |

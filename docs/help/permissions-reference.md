@@ -5,7 +5,8 @@ Permissions are granted per **resource** across the whole workspace. Each permis
 | Resource | Permission | Label in the app | Agent role |
 |---|---|---|---|
 | **Leads** | `leads.view` | View leads | :lucide-check: |
-| | `leads.manage` | Manage leads (reassign nurture) | |
+| | `leads.manage` | Manage leads (edit and delete) | |
+| | `leads.change_status` | Change lead status (agents: only leads in their own conversations) | :lucide-check: |
 | **Conversations** | `conversations.view` | View conversations | :lucide-check: |
 | | `conversations.send_message` | Send messages in conversations | :lucide-check: |
 | | `conversations.takeover` | Take over conversations from AI | :lucide-check: |
@@ -20,7 +21,7 @@ Permissions are granted per **resource** across the whole workspace. Each permis
 | **Agents** | `agents.view` | View team agents list | |
 | | `agents.manage` | Manage agent records | |
 | **Reports & Analytics** | `reports.view` | View dashboards, live ops & reports | :lucide-check: |
-| | `reports.manage` | Create & edit saved reports | |
+| | `reports.manage` | Customize own dashboard | |
 | **Integrations** | `integrations.view` | View integrations | |
 | | `integrations.manage` | Connect & manage integrations (incl. Meta) | |
 | **Workspace Settings** | `workspace_settings.view` | View workspace settings | |

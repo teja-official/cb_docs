@@ -50,7 +50,7 @@ Channels missing these requirements are left out of the list. If none qualifies,
 
 Leave this on and leads who don't reply to the greeting get a few short follow-ups on the same channel; then the conversation closes as **No response**. Any reply, on any channel, stops them.
 
-You can set the schedule: each **Follow-up 1, 2, 3…** in hours after the greeting (default **24, 48 and 72 hours**, up to 5 follow-ups, each later than the last, at most 720 hours), and **Close as "No response" after the last one** (default **48 hours**). Quiet hours from [Workspace settings](../workspace/workspace-settings.md#quiet-hours) always apply.
+You can set the schedule: each **Follow-up 1, 2, 3…** in hours after the greeting (default **24, 48 and 72 hours**, up to 5 follow-ups, each later than the last, at most 720 hours; your plan sets how many you can use — 2 on Starter — and new campaigns start with that many), and **Close as "No response" after the last one** (default **48 hours**). Quiet hours from [Workspace settings](../workspace/workspace-settings.md#quiet-hours) always apply.
 
 On WhatsApp the follow-ups use the channel's [follow-up template](../setup/channels/message-templates.md#follow-up-template) (or reuse the greeting template). Details in [Follow-ups](follow-ups.md#no-reply-follow-ups).
 

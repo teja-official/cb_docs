@@ -16,7 +16,7 @@ Choose which categories appear in **Account settings → In-app notifications**:
 | **Conversations** | New messages, closed conversations, buying intent. |
 | **AI & knowledge base** | Knowledge base ready or failed, low AI confidence. |
 | **Billing** | Payments and subscription changes. |
-| **Team** | Invitations and teammates going offline. |
+| **Team** | Invitations sent to you and accepted by others. |
 | **Lead sources** | Imports and reconnect requests. |
 
 These settings apply in this and every workspace you use.
@@ -31,7 +31,7 @@ These settings apply in this and every workspace you use.
 
 ## Emails
 
-The workspace owner gets lifecycle and alert emails at the **Reporting email**: welcome, subscription confirmed / expiring / expired, payment failed, auto-renew turned off, invoices, referral rewards, lead-source reconnect requests, daily and monthly reports, and error alerts. Turn the optional ones on or off in [Account settings → Emails](account-settings.md#emails).
+The workspace owner gets lifecycle and alert emails at the **Reporting email**: welcome, subscription confirmed / expiring / expired, payment failed, auto-renew turned off, invoices, referral rewards, lead-source reconnect requests, the daily report, the end-of-day missed activity report, leads ready to buy, and error alerts. Turn the optional ones on or off in [Account settings → Emails](account-settings.md#emails).
 
 ## Agent alerts
 

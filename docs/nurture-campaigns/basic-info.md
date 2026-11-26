@@ -19,7 +19,7 @@ It's how a lead lands directly in this campaign instead of choosing from a menu.
 
 - **Telegram**: `https://t.me/<your_bot_username>?start=premium_insurance`
 
-When several campaigns share a channel, a lead is routed to the right one by, in order: an existing assignment → the deep link / start parameter → ad or UTM metadata → an exact product name in their message → AI identification → a product menu.
+When several campaigns share a channel, a lead is routed to the right one by, in order: an existing assignment → the deep link / start parameter → an exact product name in their message → AI identification → a product menu.
 
 ## Timezone
 
