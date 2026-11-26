@@ -18,7 +18,7 @@ A **lead source** (integration) brings new leads into [[ app.name ]] so the AI c
 
 <div class="steps" markdown>
 
-1. The lead is created (duplicates are skipped) and appears in **Leads**, linked to the campaign the form or file feeds.
+1. The lead is created and appears in **Leads**, linked to the campaign the form or file feeds. A submission that was already imported is skipped. A person you already have (same email or phone in this workspace) isn't created twice: the submission is added to their lead, and [these rules](../../engage/lead-statuses.md#when-a-lead-submits-another-form) decide whether they get a greeting.
 2. The AI writes a **first message** using the campaign's knowledge base and sends it on the campaign's **primary follow-up channel** — WhatsApp (template), Email or SMS.
 3. The connection's **Message status** shows whether it was queued, sent, delivered, responded, failed or skipped.
 4. If the lead doesn't reply, [no-reply follow-ups](../../nurture-campaigns/follow-ups.md#no-reply-follow-ups) start.

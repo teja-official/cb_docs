@@ -27,7 +27,7 @@ Each conversation shows its channel icon, the latest message, and a 🔥 marker 
 - The top of the thread shows where the lead came from, e.g. *New lead · Meta Lead Ads*, with the capture time.
 - A progress tracker shows **Captured → Lead replied → Handed off / With agent → Closed**.
 - Scheduled follow-ups appear inline (*Follow-up scheduled · Tue, Mar 3 · 9:00 AM*); hover to see what the lead asked for.
-- Closed conversations say why: *Closed: no reply to the greeting or follow-ups*, *Closed automatically after inactivity*, or *Conversation closed*.
+- Closed conversations say why: *Closed: no reply to the greeting or follow-ups*, *Closed: the lead enquired about another product*, *Closed automatically after inactivity*, or *Conversation closed*.
 
 ## Take over from the AI
 
@@ -71,5 +71,6 @@ Click :lucide-users: **Reassign to another agent**, search for an agent and sele
 - **No response** — the lead never replied to the greeting and follow-ups.
 - **The lead finished** — the AI ends the conversation politely once the lead is done.
 - **The lead started over** — a lead who sends a bare greeting (*hi*, `/start`, *menu*) mid-conversation starts a new one.
+- **Lead moved to another product** — the lead submitted a form for a different product. Their open AI conversations close (summary kept) and the new product's greeting starts a fresh one, so two products never share a thread. See [When a lead submits another form](lead-statuses.md#when-a-lead-submits-another-form).
 
-Conversations a human agent took over are **never closed automatically**.
+Conversations a human agent took over are **never closed automatically**, not even when the lead enquires about another product. The agent is told instead.

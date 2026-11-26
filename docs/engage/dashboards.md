@@ -21,7 +21,7 @@ Below the KPIs you'll find charts, the **nurture performance** table (click a ro
 
 ### Conversion metrics
 
-The **Conversion** metrics (add them from **Customize → Metrics**) are also on the [Pipeline page](lead-statuses.md#pipeline-page): Qualified leads awaiting a decision, conversions over time, time to convert, why leads were lost, conversions by agent, and leads enquiring about several products. Conversions are credited to the product the lead was on when it was marked Converted.
+The **Conversion** metrics (add them from **Customize → Metrics**) are also on the [Pipeline page](lead-statuses.md#pipeline-page): Qualified leads awaiting a decision, conversions over time, time to convert, why leads were lost, conversions by agent, and leads enquiring about several products. Conversions are credited to the product the lead was on when it was marked Converted. Per-product numbers (the nurture leaderboard and each campaign's metrics) count every lead who enquired about the product, so a lead who enquired about two products counts for both.
 
 ### Live panel
 

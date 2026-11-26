@@ -30,7 +30,10 @@
     Whatever your AI model supports. Add *"Reply in the language the lead writes in"* to the campaign's **Instructions**.
 
 ??? question "Can I sell several products?"
-    Yes — create one nurture campaign per product. Leads are routed by deep link, ad form, the product they name, or a product menu.
+    Yes — create one nurture campaign per product. Leads are routed by deep link, ad form, the product they name, or a product menu. A person who enquires about several products stays one lead, with a separate status for each product. See [One person, several products](../engage/leads.md#one-person-several-products).
+
+??? question "What if the same person fills in my form twice, or on both Meta and Google?"
+    They stay one lead (matched by email or phone) and every submission is kept. While a conversation is open, or within 24 hours of their last greeting, they don't get a second greeting. Details: [When a lead submits another form](../engage/lead-statuses.md#when-a-lead-submits-another-form).
 
 ## Team
 

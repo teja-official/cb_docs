@@ -1,6 +1,8 @@
 # Lead statuses
 
-Every lead has one status that says where it is in your funnel. Most changes happen on their own as the AI and the follow-ups work. **Converted** is the one status only a person sets.
+A status says where a lead is in your funnel **for one product**. A lead who enquired about two products has two statuses: they can be **Converted** on Solar panels and **New** on Batteries. The badge on the lead shows the status on their **current product** (the one they enquired about most recently); the lead's **Products** section shows all of them.
+
+Most changes happen on their own as the AI and the follow-ups work. **Converted** is the one status only a person sets.
 
 <span class="tj-path">Engage › **Leads** › click the status badge</span>
 
@@ -8,7 +10,7 @@ Every lead has one status that says where it is in your funnel. Most changes hap
 
 | Status | Means | Set when | Set by |
 |---|---|---|---|
-| **New** | Just captured. Nothing has been sent yet. | A lead is captured. Also when a lead who declined or went silent submits a form again, or a customer enquires about a different product. | System |
+| **New** | Just captured. Nothing has been sent yet. | A lead is captured, or enquires about another product (that product starts at New). Also when a lead who declined or went silent submits that product's form again. | System |
 | **Contacted** | We reached out. The lead hasn't replied yet. | The greeting is delivered. | System |
 | **Engaged** | The lead replied at least once. | The lead's first reply, on any channel. Also when a **Lost** lead writes back. | System |
 | **Qualified** | The lead clearly wants to go ahead. | The AI sees buying intent: the lead asks how to buy, pay, order, book or get started, or confirms a demo or visit. Questions about price, features or comparisons alone don't count. | AI |
@@ -34,6 +36,7 @@ flowchart LR
     L -->|lead writes back| E
 ```
 
+- **Each product moves on its own.** A greeting, a reply or an AI decision changes the status of the product that conversation is about. The lead's other products keep theirs.
 - **Automatic changes only move a lead forward**: New → Contacted → Engaged → Qualified. A lead never goes back to an earlier stage on its own.
 - **Converted, Not interested and Lost are outcomes.** The AI and the system never overwrite them, with two exceptions:
     - A **Lost** lead who writes back becomes **Engaged** again.
@@ -45,13 +48,30 @@ flowchart LR
 
 ## When a lead submits another form
 
-When a lead you already have fills in another form, from any lead source:
+A person is **one lead per workspace**, matched by email or phone. However many forms they fill in, on Meta, Google Ads, a sheet or an upload, you see one lead, with every submission kept under their **Products**. Leads in another workspace are never matched: the same person in two workspaces is two separate leads, each with its own conversations and statuses.
 
-| Their status | Same product | Another product |
+What happens depends on the product the form is for:
+
+| The form is for | A conversation is open | What happens |
 |---|---|---|
-| New, Contacted, Engaged, Qualified | No change | No change. They get the new product's greeting. |
-| Not interested, Lost | Back to **New**: a new form is a fresh opt-in | Back to **New** |
-| Converted | Stays **Converted**. You and the agent are told an existing customer enquired again. | Back to **New** for the new product. Their earlier conversion still counts for the first product. |
+| **The same product** | Yes | No new greeting: the conversation carries on. You (and the agent on it) are told the lead submitted the form again. |
+| **The same product** | No, but we greeted them in the last 24 hours | Nothing is sent. Someone clicking the same ad twice, or seeing it on both Meta and Google, gets one message. |
+| **The same product** | No | A "welcome back" greeting that picks up from their last conversation about it. |
+| **Another product** | Yes, and a **team member** has it (an agent took over, or a handoff is waiting) | The lead stays on the product they're talking about and **no message is sent**. The agent is told the lead also enquired about the other product. Admins are told when no agent has it yet. The new product is added to the lead at **New**. |
+| **Another product** | Yes, handled by the AI, or none | Open conversations close (*Lead moved to another product*, the summary is kept) and pending follow-ups stop. The lead moves to the new product and gets its greeting in a fresh conversation, so the two products never mix. |
+
+Status rules for the product the form is for:
+
+| Its status | What happens |
+|---|---|
+| The lead never enquired about it | Starts at **New**. |
+| New, Contacted, Engaged, Qualified | No change. |
+| Not interested, Lost | Back to **New**: a new form is a fresh opt-in. |
+| Converted | Stays **Converted**. You and the agent are told an existing customer enquired again. |
+
+The lead's other products keep their status. An earlier conversion keeps counting for the product it happened on.
+
+A missing email or phone on the lead is filled in from the new form. A different email or phone is kept as an alternate contact. People who share an email or phone (family, an office line) are treated as one lead.
 
 The dashboard's **Leads enquiring about several products** card counts leads who talked to you about two or more products.
 
@@ -78,7 +98,7 @@ Final messages go out on **Email, SMS and WhatsApp**. WhatsApp uses the follow-u
 
 ## Changing a status
 
-Click the status badge on the lead's details (from **Leads**, or the lead panel in **Conversations**) and pick the new status.
+Click the status badge on the lead's details (from **Leads**, or the lead panel in **Conversations**) and pick the new status. That changes their current product. To change another product, use its badge in the lead's **Products** section.
 
 - **Admins** can change any lead.
 - **Agents** can change leads in conversations assigned to them (permission *Change lead status*, which the Agent role has).
@@ -107,7 +127,7 @@ Only a person knows whether a lead paid, so nobody should forget to mark it:
 | After the **escalation** window (default **72 hours**) | It's reported to admins with the reason. |
 | At reminder time, if the agent is **unreachable** | It's reported to admins straight away. Unreachable means offline for more than a day, set to unavailable, or no longer in the workspace. |
 
-Each step happens once per Qualified period. Marking the lead Converted or Lost (or any other status) ends it. Admins set both windows in [Workspace settings → Lead conversion](../workspace/workspace-settings.md#lead-conversion).
+It works per product: a lead who was Qualified on one product and then enquired about another still gets a decision on the first one. Each step happens once per Qualified period. Marking the product Converted or Lost (or any other status) ends it. Admins set both windows in [Workspace settings → Lead conversion](../workspace/workspace-settings.md#lead-conversion).
 
 ## Pipeline page
 
@@ -116,7 +136,7 @@ Each step happens once per Qualified period. Marking the lead Converted or Lost 
 For admins:
 
 - **Conversion decisions**: Qualified leads past the reminder window, with the agent reminded, and reported to admins.
-- **Awaiting a conversion decision**: those leads, oldest first, with **why** nobody has marked them (*"Ravi has been offline since 21 Nov"*, *"No agent assigned"*, *"Ravi hasn't marked it for 4 days"*). Click one to open it and set its status.
+- **Awaiting a conversion decision**: those leads and the product they're Qualified on, oldest first, with **why** nobody has marked them (*"Ravi has been offline since 21 Nov"*, *"No agent assigned"*, *"Ravi hasn't marked it for 4 days"*). Click one to open it and set its status.
 - **Qualified and converted** over time, and **Time to convert** (median, capture → Converted).
 - **Why leads were lost**: Lost and Not interested leads by reason.
 - **Conversions by agent**: leads each person marked Converted, and their leads still waiting.

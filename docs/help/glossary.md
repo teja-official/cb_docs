@@ -40,13 +40,13 @@ Knowledge base (KB)
 :   The facts a campaign's AI may use: knowledge blocks, Q&A pairs and instructions. Must be processed (**Process KB**) before use. [Knowledge base](../nurture-campaigns/knowledge-base.md)
 
 Lead
-:   A prospect, captured from a lead source or an inbound message.
+:   A prospect, captured from a lead source or an inbound message. One person is one lead per workspace (matched by email or phone), however many forms they submit. [One person, several products](../engage/leads.md#one-person-several-products)
 
 Lead source (integration)
 :   A connection that brings leads in: Meta Ads, Google Ads, Google Sheets, spreadsheet upload. [Lead sources](../setup/lead-sources/index.md)
 
 Lead status
-:   Where a lead is in the funnel: New, Contacted, Engaged, Qualified, Converted, Not interested or Lost. Most changes are automatic; only a person marks Converted. [Lead statuses](../engage/lead-statuses.md)
+:   Where a lead is in the funnel for one product: New, Contacted, Engaged, Qualified, Converted, Not interested or Lost. A lead on several products has a status for each. Most changes are automatic; only a person marks Converted. [Lead statuses](../engage/lead-statuses.md)
 
 Message template
 :   A pre-approved message format (WhatsApp, Twilio) required to message someone first. [Message templates](../setup/channels/message-templates.md)
