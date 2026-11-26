@@ -114,6 +114,7 @@ nav:
       - Conversations: engage/conversations.md
       - Handoffs to agents: engage/handoffs.md
       - Leads: engage/leads.md
+      - Lead statuses & Pipeline: engage/lead-statuses.md
       - Lead web chat: engage/web-chat.md
       - Dashboards: engage/dashboards.md
 

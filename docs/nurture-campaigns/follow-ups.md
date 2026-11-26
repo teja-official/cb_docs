@@ -37,9 +37,13 @@ flowchart TD
 - A follow-up due during quiet hours is moved to the end of the quiet window.
 - Default timing: **24, 48 and 72 hours** after the greeting, then close **48 hours** after the last one. Change it per campaign in [step 2](ai-and-channels.md#follow-up-automatically-when-a-lead-doesnt-reply).
 
-**The sequence stops when** the lead replies on any channel, taps a button, or opens their [web chat link](../engage/web-chat.md) — or when an agent takes over, the lead's status changes to *Qualified, Not Interested, Converted* or *Lost*, the campaign is paused, or the lead source is disabled.
+**The sequence stops when** the lead replies on any channel, taps a button, or opens their [web chat link](../engage/web-chat.md) — or when an agent takes over, the lead's status changes to *Not interested, Converted* or *Lost*, the campaign is paused, or the lead source is disabled. When the sequence ends in silence, the lead is marked **Lost** ([Lead statuses](../engage/lead-statuses.md)).
 
 In **Conversations**, these leads show under the **Awaiting** filter (*Greeting sent, waiting for the lead's first reply*). They don't count as active conversations on dashboards until they reply.
+
+## Final message before Lost
+
+A lead who **replied** and then went quiet gets one last message before being marked **Lost**. By default it goes out 48 hours after the conversation went quiet, on Email, SMS or WhatsApp. If there's no reply, the conversation closes as *No response* after the campaign's close time. Qualified leads are never marked Lost automatically. Set the delay, or turn it off with 0, in [step 2](ai-and-channels.md#final-message-before-marking-a-lead-lost). Details in [Lead statuses](../engage/lead-statuses.md#before-a-lead-is-marked-lost).
 
 ## Requested follow-ups
 

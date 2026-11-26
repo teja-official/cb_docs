@@ -13,11 +13,15 @@ Use the date range filter to change the period. Key numbers:
 | **Total leads** | Leads captured in the period, with the change from the previous period. |
 | **Active conversations** | Conversations in progress now (leads still waiting for a first reply aren't counted). |
 | **AI handling** | Share of conversations handled entirely by the AI. |
-| **Conversion rate** | Share of leads that converted. |
+| **Conversion rate** | Share of leads captured in the period that were marked Converted, even if they later enquired about another product. A Converted mark someone undid doesn't count. |
 | **Avg sentiment** | Average lead sentiment. |
 | **AI usage (tokens)** | Input / output tokens used by your AI models. |
 
 Below the KPIs you'll find charts, the **nurture performance** table (click a row to open that [campaign's analytics](../nurture-campaigns/manage-campaigns.md#campaign-analytics)), and the **Live** panel.
+
+### Conversion metrics
+
+The **Conversion** metrics (add them from **Customize → Metrics**) are also on the [Pipeline page](lead-statuses.md#pipeline-page): Qualified leads awaiting a decision, conversions over time, time to convert, why leads were lost, conversions by agent, and leads enquiring about several products. Conversions are credited to the product the lead was on when it was marked Converted.
 
 ### Live panel
 

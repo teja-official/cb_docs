@@ -24,6 +24,9 @@ Conversation
 Deep link ID
 :   A campaign's unique short ID, used in links that open a chat straight into that campaign (e.g. `t.me/<bot>?start=<id>`).
 
+Final message
+:   One last message to a lead who replied and then went quiet, sent before they are marked **Lost**. [Lead statuses](../engage/lead-statuses.md#before-a-lead-is-marked-lost)
+
 Grace period
 :   The 2 days after a plan ends during which the app still works.
 
@@ -42,6 +45,9 @@ Lead
 Lead source (integration)
 :   A connection that brings leads in: Meta Ads, Google Ads, Google Sheets, spreadsheet upload. [Lead sources](../setup/lead-sources/index.md)
 
+Lead status
+:   Where a lead is in the funnel: New, Contacted, Engaged, Qualified, Converted, Not interested or Lost. Most changes are automatic; only a person marks Converted. [Lead statuses](../engage/lead-statuses.md)
+
 Message template
 :   A pre-approved message format (WhatsApp, Twilio) required to message someone first. [Message templates](../setup/channels/message-templates.md)
 
@@ -50,6 +56,9 @@ No-reply follow-up
 
 Nurture campaign (nurture)
 :   One product's AI follow-up setup: knowledge base, tone, channels, follow-ups and handoff rules. [Nurture campaigns](../nurture-campaigns/index.md)
+
+Pipeline
+:   The page listing Qualified leads waiting for someone to mark them Converted or Lost, with conversion metrics. [Lead statuses](../engage/lead-statuses.md#pipeline-page)
 
 Primary follow-up channel
 :   The channel a campaign uses to send the first message to new leads. Must be WhatsApp (with template), Email or SMS.

@@ -54,6 +54,19 @@ You can set the schedule: each **Follow-up 1, 2, 3…** in hours after the greet
 
 On WhatsApp the follow-ups use the channel's [follow-up template](../setup/channels/message-templates.md#follow-up-template) (or reuse the greeting template). Details in [Follow-ups](follow-ups.md#no-reply-follow-ups).
 
+### When a lead says no
+
+**Stop when the lead says they're not interested**, on by default:
+
+- **On**: the AI says a polite goodbye, every pending follow-up is cancelled and the conversation closes. The lead is marked **Not interested**.
+- **Off**: the lead is still marked Not interested, but the AI makes one gentle attempt to address their reason, and follow-ups already scheduled still go out.
+
+A lead who asks to stop receiving messages (*"stop"*, *"unsubscribe"*) is always stopped. See [Lead statuses](../engage/lead-statuses.md#when-the-ai-decides).
+
+### Final message before marking a lead Lost
+
+**Hours of silence** before a lead who replied, then went quiet, gets one last message (default **48**, 0 turns it off). No reply to it marks the lead **Lost**. See [Lead statuses](../engage/lead-statuses.md#before-a-lead-is-marked-lost).
+
 ## Agent assignment strategy
 
 When a conversation is handed off, how should the agent be selected?

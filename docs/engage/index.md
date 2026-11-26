@@ -22,6 +22,12 @@ Once a campaign is live, this is where you and your team work day to day.
 
     Every lead, its source, status and next follow-up.
 
+-   <span class="tj-icon">:lucide-target:</span> **[Lead statuses & Pipeline](lead-statuses.md)**
+
+    ---
+
+    What each status means, when it's set, and following Qualified leads through to a decision.
+
 -   <span class="tj-icon">:lucide-globe:</span> **[Lead web chat](web-chat.md)**
 
     ---

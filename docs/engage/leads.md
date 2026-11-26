@@ -24,15 +24,15 @@ Click a lead to open its details — name, contact details, nurture (or *Unassig
 
 | Status | Meaning |
 |---|---|
-| **New** | Just captured. |
-| **Contacted** | The first message went out. |
-| **Engaged** | The lead replied and is talking. |
-| **Qualified** | A good fit and interested. |
-| **Not Interested** | Declined. |
-| **Converted** | Became a customer. |
-| **Lost** | Gone cold or bought elsewhere. |
+| **New** | Just captured. Nothing has been sent yet. |
+| **Contacted** | The greeting was delivered; no reply yet. |
+| **Engaged** | The lead replied at least once. |
+| **Qualified** | The lead clearly wants to buy, book or pay (set by the AI). |
+| **Converted** | Became a customer (set by an agent or admin). |
+| **Not interested** | The lead clearly declined (set by the AI). |
+| **Lost** | Went silent, even after a final message. |
 
-When a lead moves to **Qualified**, **Not Interested**, **Converted** or **Lost**, pending no-reply follow-ups stop.
+Statuses change on their own as the AI and the follow-ups work, and you can change one by clicking the badge in the lead's details. Every change is kept in the lead's **Status history**. When a lead becomes **Not interested**, **Converted** or **Lost**, pending no-reply follow-ups stop. Exactly when each status is set, and how Qualified leads get followed through: [Lead statuses](lead-statuses.md).
 
 ## Deleting leads
 

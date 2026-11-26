@@ -35,6 +35,15 @@ AI-handled conversations close on their own when nobody writes for a while. A ne
 
 Leads still waiting for their first reply (with no-reply follow-ups scheduled) aren't closed by this rule — they close as *No response* after the last follow-up instead.
 
+## Lead conversion
+
+Only a person can mark a lead **Converted**. When a **Qualified** lead isn't marked Converted or Lost, its agent is reminded, then it's reported to admins on the [Pipeline page](../engage/lead-statuses.md#pipeline-page).
+
+| Setting | Default | Range |
+|---|---|---|
+| **Remind the agent after (hours Qualified)** | 24 | 1–720. With no agent on the lead, admins get the reminder. |
+| **Report to admins after (hours Qualified)** | 72 | 1–2160, later than the reminder. Sooner if the agent is unreachable at reminder time: offline for a day, set to unavailable, or no longer in the workspace. |
+
 ## Lead chat links
 
 The personal [web chat link](../engage/web-chat.md) sent to leads by SMS or email.
