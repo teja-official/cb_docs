@@ -27,6 +27,7 @@ They get an email. Once they accept, they appear in the member list. If they don
 - **Pending invitations** are listed below the members. You can **revoke** one any time before it's accepted.
 - Pending invitations count toward your plan's **team seats**.
 - Inviting needs an active plan and the *Team invites* plan feature.
+- **Referral codes don't work for teammates.** If someone you invite signs up with your referral code (or the code of anyone in your workspace), neither of you gets a referral benefit. See [Referrals](../account/referrals.md#referrals-dont-apply-between-team-members).
 
 ### Change a role or remove a member
 

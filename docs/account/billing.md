@@ -51,7 +51,7 @@ If a plan ends without renewal, access continues for **2 days** (**Grace Period*
 The price shown at checkout is exactly what you're charged.
 
 !!! info "Discount limits"
-    A single coupon can take at most 50% off, and all discounts together at most 50%. If they add up to more, referral credit is reduced first (the rest stays available for next time).
+    A single coupon can take at most 50% off. Referral benefits (referral discount and referral credit) take at most **30%** off a payment, and all discounts together at most **50%**. If they add up to more, referral credit is reduced first (the rest stays available for next time). Referrals between team members give no discount — see [Referrals](referrals.md#referrals-dont-apply-between-team-members).
 
 ## Plan Usage
 

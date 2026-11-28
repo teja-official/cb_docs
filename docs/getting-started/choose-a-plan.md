@@ -33,7 +33,7 @@ Inviting new members and creating custom roles also need an active plan.
 - **Auto-renew is off until you turn it on** — no surprise charges. Turn it on from **Billing → Subscription** if you want the plan to renew automatically.
 - **Cancel anytime.** You keep access until your paid period ends.
 - **Upgrade any time.** The unused part of what you already paid is credited toward the new plan.
-- **Discounts are capped.** A coupon can take at most 50% off, and all discounts together (coupon, referral discount, referral credit) at most 50%.
+- **Discounts are capped.** A coupon can take at most 50% off, referral benefits (referral discount and referral credit) at most 30%, and all discounts together at most 50%.
 - **Short grace period.** If a plan ends, access continues for a short grace period (2 days) before the app locks.
 
 Everything about subscriptions, usage and invoices is in [Billing & plans](../account/billing.md).

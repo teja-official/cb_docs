@@ -6,7 +6,7 @@ Sign up at <[[ app.register_url ]]>. It takes about a minute.
 
 <div class="steps" markdown>
 
-1. **Your details** — enter your first name, last name, email and phone number. If someone referred you, their referral code is filled in from the link; you can also type one.
+1. **Your details** — enter your first name, last name, email and phone number. If someone referred you, open their referral link — the code is applied from the link (there's no field to type one). The page shows what the code gives you — and warns you if it won't apply because the person who referred you is on the team you're joining (see [Referrals](../account/referrals.md#referrals-dont-apply-between-team-members)).
 2. **Verify email** — we email you a verification code. Enter it and click **Verify email**.
 3. **Set password** — choose a password and click **Create account**.
 4. **Choose a plan** — your account is ready. Owners pick a plan next; see [Choose a plan](choose-a-plan.md).

@@ -1,5 +1,8 @@
 .PHONY: help install serve build clean deploy icons
 
+# Silence Material for MkDocs' MkDocs 2.0 notice. We stay pinned to mkdocs 1.x.
+export NO_MKDOCS_2_WARNING := 1
+
 help:
 	@echo "tejod Help Center"
 	@echo ""

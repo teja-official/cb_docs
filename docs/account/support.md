@@ -42,6 +42,9 @@ Open a ticket to see its status tracker, timeline, screenshots and replies.
 | **Resolved** | We think it's fixed. Reply if it isn't and it reopens. |
 | **Closed** | Done. You can **reopen** it if needed. |
 
+!!! note "Screenshots are kept for 30 days after closing"
+    When a ticket is closed, its screenshots are deleted **30 days later**. The ticket, its description and the whole conversation stay. The ticket shows the deletion date above its screenshots. Reopen the ticket before then if you still need them.
+
 ## Who sees tickets
 
 Tickets stay inside your workspace. **Admins see all of the workspace's tickets**; other members see only their own.
